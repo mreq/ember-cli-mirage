@@ -7,6 +7,8 @@ import _assign from 'lodash/object/assign';
 export default {
   name: 'ember-cli-mirage',
   initialize: function(application) {
+    if (ENV.environment != 'test') { return; }
+
     if (arguments.length > 1) { // Ember < 2.1
       var container = arguments[0],
           application = arguments[1];
